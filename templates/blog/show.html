@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ article.title }}</h1>
+    
+    {{ article.body|safe }}
+    
+    <p>Par {{ article.author }} le {{ article.creation_date|date:'d M Y' }}</p>
+{% endblock %}

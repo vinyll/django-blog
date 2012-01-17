@@ -2,7 +2,7 @@
 
 import os
 
-PROJECT_ROOT = os.path.normpath(os.path.abspath(os.path.abspath(__file__)))
+PROJECT_ROOT = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), '..'))
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -48,7 +48,7 @@ USE_I18N = False
 USE_L10N = False
 
 # If you set this to False, Django will not use timezone-aware datetimes.
-USE_TZ = True
+USE_TZ = False
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
@@ -63,7 +63,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')+'/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -110,9 +110,7 @@ ROOT_URLCONF = 'app.urls'
 WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -120,9 +118,11 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    #'django.contrib.staticfiles',
     'django.contrib.admin',
-    'app'
+    'south',
+    'blog',
+    'app',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -153,3 +153,7 @@ LOGGING = {
         },
     }
 }
+
+###
+
+FEINCMS_ADMIN_MEDIA_LOCATION = ''

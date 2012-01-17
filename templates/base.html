@@ -1,0 +1,26 @@
+<html>
+<head>
+    <link type="text/stylesheet" rel="stylesheet" href="/static/css/normalize.css" />
+    <link type="text/stylesheet" rel="stylesheet" href="/static/css/base.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Web dev tips</h1>
+    </header>
+    
+    <section>
+    {% block content %}
+    
+    {% endblock %}
+    </section>
+    
+    <footer>
+        Blog réalisé sous <a href="http://www.djangoproject.com" target="_blank" title="Django, Framework web en Python">Django</a>
+        <ul>
+            <li>Twitter : <a href="http://twitter.com/vinyll" target="_blank" title="Me suivre sur Twitter">@vinyll</a></li>
+            <li>Linked-in : <a href="http://fr.linkedin.com/in/vincentagnano" target="_blank" title="CV sur LinkedIn">linkedin.com/in/vincentagnano</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% for article in articles %}
+    <article lang="fr">
+        <h1><a href="{% url blog_article_show article.slug %}" title="Consulter l'article «{{ article.title }}»">{{ article.title }}</a></h1>
+        <p>
+        {% if article.summary %}
+        {{ article.summary }}
+        {% else %}
+        {{ article.body|safe }}
+        {% endif %}
+        </p>
+    </article>
+    {% endfor %}
+{% endblock %}

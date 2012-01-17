@@ -1,0 +1,36 @@
+body {
+  color: rgb(50,50,50);
+}
+
+a {
+    color: inherit;
+}
+
+body > header {
+    background-color: rgb(50,50,50);
+    color: white;
+    padding: 5% 1%;
+    box-shadow: 0 3px 5px #999;
+}
+
+body > section {
+    margin: 5% 2%;
+}
+
+h1 a {
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgb(200,200,200);
+}
+
+footer {
+  background-color: rgb(80,80,80);
+  color: white;
+  font-size: 75%;
+  padding: 2% 1%;
+  border-top: 1px dashed rgb(200,200,200);
+}
+
+footer a {
+    color: #6ac;
+    text-decoration: none;
+}
