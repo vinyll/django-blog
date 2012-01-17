@@ -7,6 +7,7 @@ class ArticleAdminForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ArticleAdminForm, self).__init__(*args, **kwargs)
         self.fields['slug'].required = False
+        self.fields['summary'].required = False
         self.fields['publication_date'].required = False
     
     class Meta:

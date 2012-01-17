@@ -4,6 +4,7 @@
 PIL
 svn+http://code.djangoproject.com/svn/django/trunk/#egg=django
 south
+markdown
 django-debug-toolbar
 git+git://github.com/jdriscoll/django-imagekit.git
 git+git://github.com/django-mptt/django-mptt.git
