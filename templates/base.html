@@ -1,12 +1,14 @@
+{% load services %}
 <html>
 <head>
     <link type="text/stylesheet" rel="stylesheet" href="/static/css/normalize.css" />
     <link type="text/stylesheet" rel="stylesheet" href="/static/css/base.css" />
+    {% analytics %}
 </head>
 
 <body>
     <header>
-        <h1>Web dev tips</h1>
+        <h1><a href="{% url homepage %}">Web dev tips</a></h1>
     </header>
     
     <section>
