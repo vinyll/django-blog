@@ -3,6 +3,12 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 
 
+class ArticleManager(models.Manager):
+    use_for_related_fields = True
+    
+    def published(self):
+        return self.get_query_set().filter(is_published=True)
+
 class Article(models.Model):
     title = models.CharField(max_length=100)
     summary = models.TextField(null=True)
@@ -14,6 +20,8 @@ class Article(models.Model):
     creation_date = models.DateField(auto_now_add=True)
     update_date = models.DateField(auto_now=True)
     
+    objects = ArticleManager()
+    
     def __unicode__(self):
         return unicode(self.title)
     
@@ -22,6 +30,9 @@ class Article(models.Model):
             self.slug = self.title
         self.slug = slugify(self.slug)
         super(Article, self).save(*args, **kwargs)
+    
+    class Meta:
+        ordering = ('publication_date', 'creation_date')
 
 
 class Comment(models.Model):
