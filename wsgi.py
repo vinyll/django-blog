@@ -1,8 +1,7 @@
 import os, sys
+from init import *
 
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-
-sys.path.append(os.path.join(PROJECT_ROOT, 'venv', 'lib', 'python2.6', 'site-packages'))
+sys.path.append(PYTHON_PACKAGES_ROOT)
 sys.path.append(PROJECT_ROOT)
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "conf.settings")

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django import forms
-from blog.models import Article
+from blog.models import Article, Tag
+from feincms.admin import editor
 
 
 class ArticleAdminForm(forms.ModelForm):
@@ -17,3 +18,10 @@ class ArticleAdmin(admin.ModelAdmin):
     form = ArticleAdminForm
 
 admin.site.register(Article, ArticleAdmin)
+
+
+
+class TagAdmin(editor.TreeEditor):
+    list_display = ('name',)
+
+admin.site.register(Tag, TagAdmin)

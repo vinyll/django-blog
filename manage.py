@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 import os, sys
+from init import *
 
-sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'venv', 'lib', 'python2.7', 'site-packages'))
+sys.path.append(PYTHON_PACKAGES_ROOT)
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "conf.local")

@@ -1,8 +1,7 @@
 # Django settings for app project.
 
 import os
-
-PROJECT_ROOT = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), '..'))
+from init import *
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -122,6 +121,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.markup',
     'south',
+    'feincms',
     'blog',
     'app',
 )
@@ -157,7 +157,11 @@ LOGGING = {
 
 ###
 
-FEINCMS_ADMIN_MEDIA_LOCATION = ''
+print DATABASES['default']['NAME']
+
+FEINCMS_ADMIN_MEDIA = '/feincms_media/'
+FEINCMS_ADMIN_MEDIA_LOCATION = os.path.join(PYTHON_PACKAGES_ROOT, 'feincms', 'static', 'feincms')
+
 
 
 GOOGLE_ANALYTICS_KEY ='UA-28440350-1'

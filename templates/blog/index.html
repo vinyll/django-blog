@@ -4,14 +4,15 @@
 {% block content %}
     {% for article in articles %}
     <article lang="fr">
-        <h1><a href="{% url blog_article_show article.slug %}" title="Consulter l'article «{{ article.title }}»">{{ article.title }}</a></h1>
+        <h1><a href="{% url blog_article article.slug %}" title="Consulter l'article «{{ article.title }}»">{{ article.title }}</a></h1>
         <p>
-        {% if article.summary %}
-        {{ article.summary|linebreaksbr }}
-        {% else %}
-        {{ article.body|markdown|striptags|linebreaksbr }}
-        {% endif %}
+            {% if article.summary %}
+            {{ article.summary|linebreaksbr }}
+            {% else %}
+            {{ article.body|markdown|striptags|linebreaksbr }}
+            {% endif %}
         </p>
+        <time>{{ article.publication_date|date:"d M Y" }}</time>
     </article>
     {% endfor %}
 {% endblock %}

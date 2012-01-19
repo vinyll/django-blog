@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header>
+    <h1>Articles relatifs à "{{ tag }}"</h1>
+</header>
+{% for article in articles %}
+<article>
+    <h1><a href="{% url blog_article article.slug %}">{{ article.title }}</a></h1>
+    <p>{{ article.summary }}</p>
+</article>
+{% endfor %}
+<footer>
+<p>Autres tags associés : {% for ctag in tags %}{% if ctag != tag %}<a href="{% url blog_tag ctag.slug %}" title="Voir les articles relatifs à {{ ctag }}">{{ ctag }}</a> {% endif %}{% endfor %}</p>
+</footer>
+{% endblock %}
