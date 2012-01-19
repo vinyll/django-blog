@@ -6,6 +6,13 @@ a {
     color: inherit;
 }
 
+pre {
+    display: bock;
+    padding: 10px;
+    background-color: rgb(245,245,245);
+    border: 1px dotted rgb(230,230,230);
+}
+
 body > header {
     background-color: rgb(50,50,50);
     color: white;
