@@ -1,5 +1,7 @@
 import os, sys
-from init import *
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+PYTHON_PACKAGES_ROOT = os.path.join(PROJECT_ROOT, 'venv', 'lib', 'python2.6', 'site-packages')
 
 sys.path.append(PYTHON_PACKAGES_ROOT)
 sys.path.append(PROJECT_ROOT)
