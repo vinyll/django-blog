@@ -1,8 +1,7 @@
 from urls import *
 from django.conf import settings
 
-urlpatterns += patterns(
-    "",
+urlpatterns += patterns("",
     url(
         r"^%s/(?P<path>.*)/?$" % settings.STATIC_URL.strip('/'),
         "django.views.static.serve",

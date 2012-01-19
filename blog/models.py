@@ -25,6 +25,11 @@ class Article(models.Model):
     
     published = ArticlePublishedManager()
     
+    @property
+    def all_tags(self):
+        """Returns a list a Tag that are related to this article"""
+        return self.tags.all()[0].get_related(True)
+    
     def __unicode__(self):
         return unicode(self.title)
     
@@ -43,7 +48,7 @@ class Tag(MPTTModel):
     slug = models.SlugField()
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children')
 
-    def related(self, include_self=False):
+    def get_related(self, include_self=False):
         return self.get_ancestors(True, include_self)
 
     def __unicode__(self):

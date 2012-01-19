@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
+{% block meta_title %}{{ tag }} articles - see also {{ tags|join:', ' }}{% endblock %}
+
 {% block content %}
 <header>
-    <h1>Articles relatifs à "{{ tag }}"</h1>
+    <h1>Articles related to "{{ tag }}"</h1>
 </header>
 {% for article in articles %}
 <article>
@@ -11,6 +13,6 @@
 </article>
 {% endfor %}
 <footer>
-<p>Autres tags associés : {% for ctag in tags %}{% if ctag != tag %}<a href="{% url blog_tag ctag.slug %}" title="Voir les articles relatifs à {{ ctag }}">{{ ctag }}</a> {% endif %}{% endfor %}</p>
+<p>Other tags that may interested you : {% for ctag in tags %}{% if ctag != tag %}<a href="{% url blog_tag ctag.slug %}" title="See articles related to {{ ctag }}">{{ ctag }}</a> {% endif %}{% endfor %}</p>
 </footer>
 {% endblock %}

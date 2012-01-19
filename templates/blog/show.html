@@ -4,13 +4,13 @@
 {% block content %}
     <h1>{{ article.title }}</h1>
     
-    <ul>
-        {% for tag in article.tags.all.0.related %}
+    <ul class="tags">
+        {% for tag in article.all_tags %}
         <li><a href="{% url blog_tag tag.slug %}">{{ tag }}</a></li>
         {% endfor %}
     </ul>
     
     {{ article.body|markdown }}
     
-    <p>Par {{ article.author }} le {{ article.creation_date|date:'d M Y' }}</p>
+    <p>By {{ article.author }} on {{ article.creation_date }}</p>
 {% endblock %}
