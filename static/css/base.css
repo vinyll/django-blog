@@ -16,16 +16,50 @@ pre {
 body > header {
     background-color: rgb(50,50,50);
     color: white;
-    padding: 3% 1%;
+    padding: 2% 1%;
     box-shadow: 0 3px 5px #999;
+    font-family: 'Calligraffitti', cursive;
+    max-height: 100px;
+    margin-bottom: 35px;
+}
+body > header > h1 {
+    font-size: 3em;
+    padding: 0;
+    margin: 1% 0;
+    text-align: center;
+}
+body > header > h2 {
+    font-size: 1em;
+    margin-top: 40px;
+    text-align: right;
+    color: black;
+}
+body > header > h2 a {
+    text-decoration: none;
+}
+body > header > h1:before {
+    content: "~ "
+}
+
+body > header > h1:after {
+    content: " ~"
 }
 
 body > section {
     margin: 3% 2%;
 }
+body > section > article > time {
+    font-size: .8em;
+    font-style: italic;
+}
+body > section > hr {
+    width: 50%;
+}
 
 h1 {
     text-shadow: 1px 1px 1px rgb(200,200,200);
+    /*font-family: 'Calligraffitti', cursive;*/
+    font-size: 1.5em;
 }
 
 h1 a {
@@ -33,7 +67,7 @@ h1 a {
 }
 
 body > footer {
-  background-color: rgb(80,80,80);
+    background-color: rgb(50,50,50);
   color: white;
   font-size: 75%;
   padding: 1.5% 1%;
