@@ -40,7 +40,7 @@ class Article(models.Model):
         super(Article, self).save(*args, **kwargs)
     
     class Meta:
-        ordering = ('publication_date', 'creation_date')
+        ordering = ('-publication_date', '-creation_date')
 
 
 class Tag(MPTTModel):
