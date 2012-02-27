@@ -90,6 +90,6 @@ body > footer a {
     font-size: .85em;
     color: rgb(100,100,100);
 }
-.tags li::before {
+.tags li:before {
     content: "» "
 }
