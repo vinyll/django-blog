@@ -23,6 +23,7 @@ class Article(models.Model):
     creation_date = models.DateField(auto_now_add=True)
     update_date = models.DateField(auto_now=True)
     
+    objects = models.Manager()
     published = ArticlePublishedManager()
     
     @property
