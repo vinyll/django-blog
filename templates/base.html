@@ -1,11 +1,13 @@
 {% load services %}
 <html>
 <head>
-    <title>{% block meta_title %}A Django and Web developper's Blog{% endblock %}</title>
+    <title>{% block meta_title %}A Python, Javascript and Web developer's Blog{% endblock %}</title>
     <link type="text/css" rel="stylesheet" href="/static/css/normalize.css" />
     <link type="text/css" rel="stylesheet" href="/static/css/base.css" />
     <link type="text/css" rel="stylesheet" href="/static/js/prettify/prettify.css" />
-    
+
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{% url feed_rss %}" />
+
     <link href='http://fonts.googleapis.com/css?family=Calligraffitti:400,700' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="/static/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="/static/js/prettify/prettify.js"></script>
@@ -17,20 +19,20 @@
 <body>
     <header>
         <h1><a href="{% url homepage %}">Vinyll's blog</a></h1>
-        <h2>( <a href="{% url blog_tag 'python' %}" title="Python developer's tips">Python</a> & <a href="{% url blog_tag 'web' %}" title="web developer's tips">Web</a> stuff… )</h2>
+        <h2>( <a href="{% url blog_tag 'python' %}" title="Python developer's tips">Python</a>, <a href="{% url blog_tag 'javascript' %}" title="Javascript developer's tips">Javascript</a> &amp; <a href="{% url blog_tag 'web' %}" title="web developer's tips">Web</a> stuff… )</h2>
     </header>
-    
+
     <section>
     {% block content %}
-    
+
     {% endblock %}
     </section>
-    
+
     <footer>
         Blog build with <a href="http://www.djangoproject.com" target="_blank" title="Django, Framework web en Python">Django</a>
         <ul>
-            <li>Twitter : <a href="http://twitter.com/vinyll" target="_blank" title="Me suivre sur Twitter">@vinyll</a></li>
-            <li>Linked-in : <a href="http://linkedin.com/in/vincentagnano" target="_blank" title="CV sur LinkedIn">linkedin.com/in/vincentagnano</a></li>
+            <li>Twitter : <a href="http://twitter.com/vinyll" target="_blank" title="Follow mw on Twitter">@vinyll</a></li>
+            <li>Linked-in : <a href="http://linkedin.com/in/vincentagnano" target="_blank" title="Resume on LinkedIn">linkedin.com/in/vincentagnano</a></li>
         </ul>
     </footer>
 </body>
