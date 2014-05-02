@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load markup %}
 
-{% block meta_title %}{{ article.title }} - {{ super }}{% endblock %}
+{% block meta_title %}{{ article.title }} - {{ block.super }}{% endblock %}
 
 {% block content %}
     <h1>{{ article.title }}</h1>
